@@ -2,13 +2,16 @@ package org.example.synthetichumancorestarter.config;
 
 import io.micrometer.core.instrument.MeterRegistry;
 import org.example.synthetichumancorestarter.audit.AuditAspect;
+import org.example.synthetichumancorestarter.audit.AuditProperties;
 import org.example.synthetichumancorestarter.command.CommandGateway;
 import org.example.synthetichumancorestarter.command.CommandQueueProcessor;
 import org.example.synthetichumancorestarter.command.DefaultCommandGateway;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@EnableConfigurationProperties(AuditProperties.class)
 public class SyntheticHumanAutoConfiguration {
 
     @Bean
