@@ -1,2 +1,3 @@
-audit.mode=console
+spring.kafka.bootstrap-servers=localhost:9092
+audit.mode=kafka
 audit.kafka.topic=audit-topic

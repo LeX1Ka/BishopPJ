@@ -8,6 +8,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Setter
 @ConfigurationProperties(prefix = "audit")
 public class AuditProperties {
-    private String mode = "console"; // console | kafka
+    private String mode = "console";
     private String kafkaTopic = "audit-topic";
 }

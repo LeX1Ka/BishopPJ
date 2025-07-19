@@ -10,6 +10,12 @@ import java.time.Instant;
 @Aspect
 @Component
 public class AuditAspect {
+    AuditPublisher auditPublisher;
+
+    public AuditAspect(AuditPublisher auditPublisher) {
+        this.auditPublisher = auditPublisher;
+    }
+
     @Around("@annotation(org.example.synthetichumancorestarter.audit.WeylandWatchingYou)")
     public Object aroundAudit(ProceedingJoinPoint joinPoint) throws Throwable {
         AuditEvent auditEvent = new AuditEvent();
@@ -21,7 +27,7 @@ public class AuditAspect {
         auditEvent.setResult(result);
         auditEvent.setTimestamp(Instant.now());
 
-        System.out.println("Audit: " + auditEvent);
+        auditPublisher.publish(auditEvent);
 
         return result;
     }
