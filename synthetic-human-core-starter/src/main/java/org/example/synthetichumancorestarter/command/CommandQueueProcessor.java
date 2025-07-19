@@ -1,4 +1,4 @@
-package org.example.synthetichumancorestarter.Comman;
+package org.example.synthetichumancorestarter.command;
 
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;

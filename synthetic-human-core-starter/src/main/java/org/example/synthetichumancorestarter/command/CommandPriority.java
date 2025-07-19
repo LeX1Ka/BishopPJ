@@ -1,4 +1,4 @@
-package org.example.synthetichumancorestarter.Comman;
+package org.example.synthetichumancorestarter.command;
 
 public enum CommandPriority {
     COMMON,
