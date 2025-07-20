@@ -10,8 +10,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.KafkaTemplate;
 
-@Configuration
 @EnableConfigurationProperties(AuditProperties.class)
+@Configuration
 public class SyntheticHumanAutoConfiguration {
 
     @Bean
@@ -34,12 +34,10 @@ public class SyntheticHumanAutoConfiguration {
         AuditProperties auditProperties,
         KafkaTemplate<String, String> kafkaTemplate
 ) {
-
         if ("kafka".equalsIgnoreCase(auditProperties.getMode())) {
             return new KafkaAuditPublisher(kafkaTemplate, auditProperties.getKafkaTopic());
         } else {
             return new ConsoleAuditPublisher();
         }
     }
-
 }
