@@ -1,20 +1,30 @@
 # Bishop Prototype
 
 `bishop-prototype` — это демо-приложение, использующее `synthetic-human-core-starter` для:
+
 - AOP-аудита действий с отправкой событий в Kafka
-- обработки команд (CRITICAL и COMMON) через очередь
-- экспорта метрик через Micrometer
-- глобальной обработки ошибок
+- Обработки команд (CRITICAL и COMMON) через очередь
+- Экспорта метрик через Micrometer
+- Глобальной обработки ошибок через контроллер-советник
 
 ---
 
 ## Состав проекта
 
-- `synthetic-human-core-starter` — стартер-библиотека (AOP + Kafka + метрики + очередь)
-- `bishop-prototype` — демо-приложение
-- `docker-compose.yml` — инфраструктура (Kafka + Zookeeper)
+- `synthetic-human-core-starter` — стартер-библиотека (AOP + Kafka + очередь + метрики)
+- `bishop-prototype` — демо-приложение, использующее стартер
+- `docker-compose.yml` — инфраструктура Kafka + Zookeeper
 
 ---
+
+## Подготовка проекта
+
+Перед запуском необходимо установить стартер в локальный Maven-репозиторий:
+
+```bash
+cd synthetic-human-core-starter
+mvn clean install
+
 
 ## Запуск Kafka через Docker
 
